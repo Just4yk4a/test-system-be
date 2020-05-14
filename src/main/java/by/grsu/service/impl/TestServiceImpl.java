@@ -31,4 +31,9 @@ public class TestServiceImpl implements TestService {
     public TestEntity save(TestEntity testEntity) {
         return testRepository.save(testEntity);
     }
+
+    @Override
+    public void deleteById(Long id) {
+        testRepository.deleteById(id);
+    }
 }

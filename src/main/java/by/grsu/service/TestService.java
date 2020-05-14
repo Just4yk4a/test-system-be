@@ -10,4 +10,6 @@ public interface TestService {
     TestEntity getTestByName(String name);
 
     TestEntity save(TestEntity testEntity);
+
+    void deleteById(Long id);
 }

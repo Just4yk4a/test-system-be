@@ -28,4 +28,9 @@ public class TestController {
     public TestVO saveTest(@RequestBody TestVO testVO) {
         return TestConverter.convert(testService.save(TestConverter.convert(testVO)));
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable Long id) {
+        testService.deleteById(id);
+    }
 }
