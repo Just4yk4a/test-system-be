@@ -9,7 +9,7 @@ public class TestConverter {
         return TestVO.builder()
                 .id(testEntity.getId())
                 .name(testEntity.getName())
-                .json(testEntity.getJson())
+                .json(testEntity.getValue())
                 .build();
     }
 
@@ -17,7 +17,7 @@ public class TestConverter {
         TestEntity roleEntity = new TestEntity();
         roleEntity.setId(testVO.getId());
         roleEntity.setName(testVO.getName());
-        roleEntity.setJson(testVO.getJson());
+        roleEntity.setValue(testVO.getJson());
         return roleEntity;
     }
 }

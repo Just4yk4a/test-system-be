@@ -52,6 +52,11 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: mail
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
                   name: role
                   type: BIGINT
                   constraints:
@@ -74,11 +79,30 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: json
+                  name: value
                   type: varchar(2000)
                   constraints:
                     nullable: false
-
+        - createTable:
+            tableName: class
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+        - createTable:
+            tableName: answer
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
         - sql:
             sql: INSERT INTO role (name) VALUES ('admin');
         - sql:
@@ -86,4 +110,4 @@ databaseChangeLog:
         - sql:
             sql: INSERT INTO role (name) VALUES ('teacher');
         - sql:
-            sql: INSERT INTO "user" ("first_name", "last_name", "login", "password", "role") VALUES ('Admin', 'Admin', 'admin', 'pass', 1)
+            sql: INSERT INTO "user" ("first_name", "last_name", "login", "password", "mail", "role") VALUES ('Admin', 'Admin', 'admin', 'pass', 'admin@gmail.com', 1)

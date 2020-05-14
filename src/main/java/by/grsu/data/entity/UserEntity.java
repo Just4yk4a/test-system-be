@@ -23,8 +23,8 @@ public class UserEntity extends AbstractPersistable<Long> {
     @Column
     private String password;
 
-//    @Column
-//    private String mail;
+    @Column
+    private String mail;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = RoleEntity.class)
     @JoinColumn(name = "role")

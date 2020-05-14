@@ -12,6 +12,7 @@ public class UserConverter {
                 .password(userEntity.getPassword())
                 .firstName(userEntity.getFirstName())
                 .secondName(userEntity.getLastName())
+                .mail(userEntity.getMail())
                 .role(RoleConverter.convert(userEntity.getRole()))
                 .build();
     }
@@ -23,6 +24,7 @@ public class UserConverter {
         userEntity.setPassword(userVO.getPassword());
         userEntity.setFirstName(userVO.getFirstName());
         userEntity.setLastName(userVO.getSecondName());
+        userEntity.setMail(userVO.getMail());
         if (userEntity.getRole() != null) {
             userEntity.setRole(RoleConverter.convert(userVO.getRole()));
         }

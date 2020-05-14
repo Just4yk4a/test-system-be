@@ -22,7 +22,7 @@ public class RoleController {
     }
 
     @GetMapping
-    public List<RoleVO> getWorkflows() {
+    public List<RoleVO> getRoles() {
         return roleService.getRoles().stream().map(RoleConverter::convert).collect(Collectors.toList());
     }
 }
